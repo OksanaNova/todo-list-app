@@ -1,0 +1,154 @@
+@import './reset.css';
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    width: 550px;
+}
+
+.inner {
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    border: none;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.todo-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-left: 5px;
+    justify-content: center;
+}
+
+h4 {
+    font-size: 24px;
+}
+
+.notebook {
+    margin-left: 10px;
+  }
+
+h5 {
+    align-self: center;
+    color: green;
+}
+
+.form__textarea {
+    min-height: 50px;
+    min-width: 200px;
+    padding: 15px;
+    font-size: 18px;
+    background: #edeef0;
+    outline: none;
+    border: none;
+    border-radius: 30px;
+    padding-left: 20px;
+} 
+
+.form__send-btn,
+.form__cancel-btn {
+    border: none;
+    border-radius: 30px;
+    padding: 10px;
+    color: #fff;
+    font-size: 22px;
+}
+
+.form__send-btn:active,
+.form__cancel-btn:active {
+    transform: scale(0.99);
+}
+
+.output {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.task {
+    position: relative;
+    border: 1px solid grey;
+    padding: 5px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    cursor: move;
+}
+
+@media (min-width: 800px) {
+    .task.dragging {
+        opacity: 0.6;
+    }
+}
+
+.task__index{
+    position: absolute;
+    text-align: center;
+    width: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -25px;
+}
+
+.task__text {
+    flex-grow: 1;
+    padding-right: 10px;
+}
+
+.task.done {
+    opacity: 0.5;
+}
+.task.done .task__text {
+    text-decoration: line-through;
+}
+
+.task.pinned {
+    border-bottom: 2px solid red;
+}
+
+.task__btns {
+    display: flex;
+    column-gap: 5px;
+}
+
+.task__pinned svg path,
+.task__done svg path {
+    fill: transparent;
+    stroke: #999;
+}
+
+.task__edit svg path,
+.task__del svg path {
+    stroke: #999;
+    fill: #999;
+}
+
+.task__pinned.active svg path,
+.task__pinned:active svg path {
+    stroke: red;
+}
+
+.task__done.active svg path,
+.task__done:active svg path {
+    stroke: green;
+}
+
+.task__del:active svg path,
+.task__edit:active svg path {
+    stroke: #1e1e24;
+    fill: #1e1e24;
+}
+
